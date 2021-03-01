@@ -24,6 +24,12 @@ let answerBtn= document.querySelectorAll("button.answerButton")
 let answer1Btn = document.querySelector("#answer1");
 let answer2Btn = document.querySelector("#answer2");
 let answer3Btn = document.querySelector("#answer3");
+let answer4Btn = document.querySelector("#answer4");
+// End of game
+let submitScrBtn = document.querySelector("#submit-score");
+let homeBtn = document.querySelector("#home");
+let clearScrBtn = document.querySelector("#clearscores");
+let viewScrBtn = document.querySelector("#view-scores");
 
 let questions = [
     {
@@ -119,3 +125,62 @@ if (questionCount < questions.length) {
 
 setQuestion(questionCount);
 }
+
+// Add score
+function addScore(event) {
+    event.preventDefault();
+
+    finalEl.style.display = "none";
+    highscoresEl.style.display = "block";
+
+    let init = initialsInput.value.toUpperCase();
+    scoreList.push({ initials: init, score: secondsLeft });
+
+    scoreListEl.innerHTML="";
+    for (let i = 0; i < scoreList.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+        scoreListEl.append(li);
+    }
+
+    storeScores();
+    displayScores();
+}
+
+// Clear scores
+function clearScores() {
+localStorage.clear();
+    scoreListEl.innerHTML="";
+}
+
+// EventListeners
+// Start timer and show first question on click start
+startBtn.addEventListener("click", startQuiz);
+
+// Check answers loop
+answerBtn.forEach(item => {
+    item.addEventListener('click', checkAnswer);
+});
+
+// Add score
+submitScrBtn.addEventListener("click", addScore);
+
+// Clear the scores
+clearScrBtn.addEventListener("click", clearScores);
+
+// Home Button
+homeBtn.addEventListener("click", function () {
+    highscoresEl.style.display = "none";
+    introEl.style.display = "block";
+    secondsLeft = 75;
+    timeEl.textContent = `Time:${secondsLeft}`;
+});
+
+// View/Hide High Scores Button
+viewScrBtn.addEventListener("click", function () {
+    if (highscoresEl.style.display === "none") {
+        highscoresEl.style.display = "block";
+    } else if (highscoresEl.style.display === "block") {
+        highscoresEl.style.display = "none";
+    } 
+});
