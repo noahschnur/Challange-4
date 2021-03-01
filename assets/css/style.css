@@ -7,10 +7,7 @@ html, body {
 }
 
 /* Hide sections until the click events */
-#questions,
-#final,
-#highscores,
-#correctwrong {
+#questions {
     display: none;  
 } 
 
@@ -19,15 +16,17 @@ ul.remove-bullets {
     list-style-type: none;
 }
 
+/* High Score */
+#view-scores {
+    box-shadow: none;
+    outline: none;
+    background-color: #744806;
+}
+
 /* Buttons */
 #start,
-.answerButton,
- {
+.answerButton {
     box-shadow: none;
     outline: none;
     background-color: #e28d0d;
 }
-
-
-
-

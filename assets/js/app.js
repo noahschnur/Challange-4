@@ -8,7 +8,8 @@ let introEl = document.querySelector("#intro");
 let questionsEl = document.querySelector("#questions");
 let questionEl = document.querySelector("#question");
 let questionCount = 0;
-
+// Div #correctwrong
+let correctwrongEl = document.querySelector("#correctwrong");
 // Buttons
 // Start
 let startBtn = document.querySelector("#start");
