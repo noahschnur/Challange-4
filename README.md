@@ -6,4 +6,4 @@ https://github.com/noahschnur/Challange-4
 
 https://noahschnur.github.io/Challange-4/
 
-![Alt text](http://assets/screenshot/Coding-Quiz/png?raw=true "Screenshot of quiz home")
+![Alt text](./assets/screenshot/Coding-Quiz.png?raw=true "Screenshot of quiz home")
