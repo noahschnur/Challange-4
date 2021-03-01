@@ -7,7 +7,9 @@ html, body {
 }
 
 /* Hide sections until the click events */
-#questions {
+#questions,
+#final,
+#correctwrong {
     display: none;  
 } 
 
@@ -25,7 +27,8 @@ ul.remove-bullets {
 
 /* Buttons */
 #start,
-.answerButton {
+.answerButton,
+#submit-score {
     box-shadow: none;
     outline: none;
     background-color: #e28d0d;
